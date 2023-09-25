@@ -44,17 +44,17 @@
         - 7^3 mod 29 = 24
       - Hence 7 is a generator for subgroup of order 7.
 8. Attack using subgroups
-    - Aryan and Neha are using Diffie-Hellman key exchange over Z*29.
+    - Alice and Bob are using Diffie-Hellman key exchange over Z*29.
     - They publicly agree on a generator g = 2
-    - Sujal, an attacker, wants to trick Aryan into using the small subgroup of order 4
+    - Eve, an attacker, wants to trick Alice into using the small subgroup of order 4
     - The generator of this subgroup is 7
-    - Sujal, instead of sending a genuine public key, sends 7 to Aryan
-    - Aryan picks his private key k = 3 and computes the public key as
+    - Eve, instead of sending a genuine public key, sends 7 to Alice
+    - Alice picks his private key k = 3 and computes the public key as
       - K = 7^3 mod 29
       - K = 24 mod 29
-    - Sujal knows Aryan's public key K is in the subgroup of order 4, since he's using 7 for computations which will alway result K to be an element of the subgroup {1,7,20,24}
-    - Sujal computes powers of 7 modulo 29 to find exponent 3:
+    - Eve knows Alice's public key K is in the subgroup of order 4, since he's using 7 for computations which will alway result K to be an element of the subgroup {1,7,20,24}
+    - Eve computes powers of 7 modulo 29 to find exponent 3:
       - 7^1 = 7 mod 29
       - 7^2 = 49 = 20 mod 29
       - 7^3 = 140 = 24 mod 29 (Match found)
-    - Hence Sujal now knows that Aryan's private key is 3 with minimum effort.
+    - Hence Eve now knows that Alice's private key is 3 with minimum effort.
